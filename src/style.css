@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+#app {
+  width: 90%;
+  margin: auto;
+}
+
+.navbar {
+  background-color: #92977e;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  position: fixed;
+}
+
+.logo {
+  margin-left: 20px;
+}
+
+.menu {
+  margin-right: 20px;
+}
+
+.products-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 100px;
+}
+
+.add-product-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 40px;
+  border: 2px solid BLACK;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.admin-container .header,
+.admin-container .add-product-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.add-product-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.add-product-form .item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.add-product-form .item .label-item {
+  flex: 1;
+}
+
+.add-product-form .item .input-item {
+  flex: 2;
+}
+
+.add-product-form .item .input-item input {
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+.error {
+  background-color: red;
+}
+
+.success {
+  background-color: green;
+}
