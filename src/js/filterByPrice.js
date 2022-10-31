@@ -34,11 +34,13 @@ const createInnerHTMLforPriceFilter = (minPrice, maxPrice) => {
       (interval) =>
         `
         <div>
-           <label>${interval.start} - ${interval.end}</label>
            <input type="checkbox" >
+           <label>${interval.start} - ${interval.end}</label>
+           
         </div>
      `
     )
+
     .join("");
 
   document.getElementById("price-filter").innerHTML = innerHTMLFilterCheckBoxes;

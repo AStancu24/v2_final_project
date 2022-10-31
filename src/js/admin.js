@@ -25,10 +25,10 @@ const populateProductsTable = async () => {
 			<td>${product.name}</td>
 			<td>${product.price}</td>
 			<td>
-				<button id="${product.id}" class="btn btn-danger">
+				<button id="${product.id}" class="button-trash">
 					<i class="fa-regular fa-trash-can"></i>
 				</button>
-				<button class="btn btn-warning">
+				<button class="button-edit">
 					<i class="fa-solid fa-pencil"></i>
 				</button>
 			</td>

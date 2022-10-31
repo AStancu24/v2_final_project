@@ -12,7 +12,9 @@ const showProductDetails = async () => {
 
   const productCardDetails = `
       <div class="details">
-         ${productInfo.description}
+        <h3> ${productInfo.name} </h3>
+         <img class="card-img-top" src="${productInfo.imgURL}" alt="Card image cap">
+         <h4>${productInfo.description}</h4>
       </div>
    `;
 
