@@ -10,29 +10,35 @@
       type="image/x-icon"
       href="./resurces/favicons/phone_logo.ico"
     />
-    <link rel="stylesheet" href="./src/style.css" />
-    <link
-      rel="stylesheet"
-      href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
-    />
     <link
       rel="stylesheet"
       href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./src/style.css" />
   </head>
   <body>
     <div id="app">
       <div class="navbar">
         <div class="logo">
-          <a class="btn btn-lg" href="./index.html">Logo</a>
+          <a class="button-home" href="./index.html"
+            ><img
+              src="./resurces/favicons/51-517437_mobile-phone-case-clip-art-font-mobile-phone-removebg-preview.png"
+          /></a>
         </div>
         <div class="menu">
-          <a class="btn btn-light" href="./src/pages/admin.html"
-            ><i class="fa-solid fa-user-plus"></i>Admin</a
-          >
-          <a class="btn btn-light" href="./src/pages/cart.html"
-            ><i class="fa-solid fa-cart-plus"></i>Cart</a
-          >
+          <a class="button-admin" href="./src/pages/admin.html"
+            ><i class="fa-solid fa-user-plus"></i
+          ></a>
+          <a class="button-cart" href="./src/pages/cart.html"
+            ><i class="fa-solid fa-cart-plus"></i
+          ></a>
         </div>
       </div>
       <div class="side">
@@ -40,14 +46,20 @@
         <div id="category-filter"></div>
       </div>
       <div class="products-container"></div>
+      <div class="footer">
+        <i class="fab fa-facebook-f margin"></i>
+        <i class="fab fa-instagram margin"></i>
+        <i class="fab fa-github margin"></i>
+        <i class="fab fa-youtube margin"></i>
+      </div>
     </div>
     <script type="module" src="./src/app.js"></script>
     <script type="module" src="./src/js/products.js"></script>
     <script type="module" src="./src/js/addToCart.js"></script>
     <script type="module" src="./src/js/filterByPrice.js"></script>
     <script type="module" src="./src/js/filterByCategory.js"></script>
-
-    <!-- <script type="module" src="./src/js/"></script> -->
+    <!-- <script type="module" src="./src/js/details.js"></script> -->
   </body>
 </html>
-<!-- Adi nu uita de notificari la add cart -->
+<!-- nu uita de notificari la add cart -->
+<!-- flex price and cat filter, all center -->
