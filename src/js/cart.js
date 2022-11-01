@@ -9,15 +9,26 @@ const loadProduct = () => {
              <div class="card-body">
                 <h5 class="card-title">${product.name}</h5>
                 <p class="card-text">${product.price}</p>
-                <a href="details.html?product_id=${product.id}" class="button-details">Details</a>
-              
+                <div>
+                   <span id="${product.id}" class="decrease">-</span>
+                   <span id="${product.id}" class="increase">+</span>
+                </div>
               </div>
           </div>`;
   };
 
+  // const increaseAmount = () => {
+  //   document.querySelector(".decrease");
+  //   console.log("decrease");
+  // };
+
+  // document
+  //   .getElementById("category-filter")
+  //   .addEventListener("click", increaseAmount);
+
   productIds.forEach(async (ProductId) => {
     const result = await fetch(
-      `https://633c56daf11701a65f748478.mockapi.io/Product/${ProductId}`
+      `https://633c56daf11701a65f748478.mockapi.io/Product/${ProductId.id}`
     );
 
     const Product = await result.json();
