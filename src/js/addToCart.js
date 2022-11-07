@@ -1,11 +1,11 @@
-const addProductToCart = async (id) => {
+const addProductToCart = async (id, price) => {
   let Product = JSON.parse(localStorage.getItem("Product"));
   if (Product == null) {
     Product = [];
-    Product.push({ id: id, quantity: 1 });
+    Product.push({ id: id, quantity: 1, price: price });
     showQuantity(Product);
   } else {
-    updateCartQuantity(Product, id);
+    updateCartQuantity(Product, id, price);
     showQuantity(Product);
   }
   console.log(Product);
@@ -22,17 +22,19 @@ const showQuantity = (Product) => {
   document.querySelector(".show-quantity").style.display = "inline-flex";
 };
 
-const updateCartQuantity = (Product, id) => {
+const updateCartQuantity = (Product, id, price) => {
   const findProduct = Product.find((product) => product.id === id);
   findProduct !== undefined
     ? findProduct.quantity++
-    : Product.push({ id: id, quantity: 1 });
+    : Product.push({ id: id, quantity: 1, price: price });
 };
 
 const handleAction = (event) => {
   if (event.target.classList.contains("add-to-cart")) {
     const productId = event.target.id;
-    addProductToCart(productId);
+    const productPrice =
+      event.target.previousElementSibling.previousElementSibling.innerHTML;
+    addProductToCart(productId, productPrice);
   }
 };
 

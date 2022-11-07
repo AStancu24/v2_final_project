@@ -8,26 +8,26 @@ const createInnerHTMLforCategoryFilter = (
   category5
 ) => {
   const innerHTMLFilterCheckBoxes = `
-        <p>Cat. filter</p>
         <div>
-             <label>${category1} </label>
-             <input name="${category1}" type="checkbox" >
+          <input name="${category1}" type="checkbox" >
+          <label>${category1} </label>
+             
         </div>
         <div>
-            <label>${category2} </label>
-            <input name="${category2}" type="checkbox" >
+          <input name="${category2}" type="checkbox" >
+          <label>${category2} </label>
+        </div>
+        <div>
+          <input name="${category3}" type="checkbox" >
+          <label>${category3} </label>
        </div>
         <div>
-             <label>${category3} </label>
-             <input name="${category3}" type="checkbox" >
-       </div>
-        <div>
-             <label>${category4} </label>
-             <input name="${category4}" type="checkbox" >
+          <input name="${category4}" type="checkbox" >
+          <label>${category4} </label>
        </div>
        <div>
-              <label>${category5} </label>
-              <input name="${category5}" type="checkbox" >
+          <input name="${category5}" type="checkbox" >
+          <label>${category5} </label>
         </div>
        `;
 

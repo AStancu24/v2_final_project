@@ -5,6 +5,9 @@ import {
 } from "./products.js";
 import { showConfirmationMessage } from "./utils.js";
 
+const categoryInputElement = document.querySelector(
+  ".add-product-form #category"
+);
 const imageInputElement = document.querySelector(".add-product-form #image");
 const nameInputElement = document.querySelector(".add-product-form #name");
 const descriptionInputElement = document.querySelector(
@@ -41,12 +44,17 @@ const populateProductsTable = async () => {
 
 window.addEventListener("DOMContentLoaded", populateProductsTable);
 
-const addProduct = async () => {
+const addProduct = async (event) => {
+  if (parseInt(priceInputElement.value) === "NaN") {
+    return;
+  }
+
   const product = {
+    category: categoryInputElement.value,
     name: nameInputElement.value,
-    image: imageInputElement.value,
+    imgURL: imageInputElement.value,
     description: descriptionInputElement.value,
-    price: priceInputElement.value,
+    price: parseInt(priceInputElement.value),
   };
 
   const response = await postNewProduct(product);
@@ -55,6 +63,12 @@ const addProduct = async () => {
     response,
     "Produsul a fost adaugat cu succes!"
   );
+
+  if (event.target.classList.contains("button-add")) {
+    if (response.ok) {
+      await populateProductsTable();
+    }
+  }
 };
 
 document.getElementById("add-product").addEventListener("click", addProduct);
@@ -65,8 +79,8 @@ document.getElementById("add-new-product").addEventListener("click", () => {
 });
 
 const handleProducts = async (event) => {
-  if (event.target.classList.contains("fa-trash-can")) {
-    const productId = event.target.parentNode.id;
+  if (event.target.classList.contains("button-trash")) {
+    const productId = event.target.id;
     const response = await deleteProductById(productId);
     if (response.ok) {
       await populateProductsTable();

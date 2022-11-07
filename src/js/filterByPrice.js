@@ -63,9 +63,9 @@ const filterByPrice = (event) => {
 
   if (event.target.checked == true) {
     const startPrice =
-      event.target.previousElementSibling.textContent.split(" - ")[0];
+      event.target.nextElementSibling.textContent.split(" - ")[0];
     const endPrice =
-      event.target.previousElementSibling.textContent.split(" - ")[1];
+      event.target.nextElementSibling.textContent.split(" - ")[1];
 
     fetch("https://633c56daf11701a65f748478.mockapi.io/Product")
       .then((result) => result.json())
